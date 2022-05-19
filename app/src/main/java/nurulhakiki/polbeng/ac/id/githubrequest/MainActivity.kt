@@ -3,8 +3,6 @@ package nurulhakiki.polbeng.ac.id.githubrequest
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.squareup.okhttp.OkHttpClient
 import com.squareup.okhttp.Request
 import kotlinx.android.synthetic.main.activity_main.*
@@ -29,11 +27,6 @@ class MainActivity : AppCompatActivity() {
                     val blog = jsonreader.getString("blog")
                     val bio = jsonreader.getString("bio")
                     val avatar_url = jsonreader.getString("avatar_url")
-                    Glide.with(applicationContext).load("https://demo.ciwaruga.com/img/ipin.jpg")
-                        .fitCenter() // menyesuaikan ukuran imageview
-                        //.crossFade() // animasi
-                        .diskCacheStrategy(DiskCacheStrategy.ALL)
-                        .into(imageView);
                     tvInfo.text =
                         "${id}\n${name}\n${url}\n${blog}\n${bio}"
                 })
